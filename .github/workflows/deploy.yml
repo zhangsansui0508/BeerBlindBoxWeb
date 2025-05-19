@@ -31,6 +31,7 @@ jobs:
 
       - name: Build
         run: |
+          carton init
           carton build --product BeerBlindBoxWeb --verbose
 
       - name: Deploy
