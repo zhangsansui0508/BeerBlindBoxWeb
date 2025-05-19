@@ -20,7 +20,7 @@ jobs:
 
       - name: Install carton
         run: |
-          curl -L https://github.com/swiftwasm/carton/releases/download/1.0.0/carton-1.0.0-x86_64-apple-darwin.tar.gz | tar xz
+          curl -L https://github.com/swiftwasm/carton/releases/download/1.0.0/carton-1.0.0-x86_64-unknown-linux-gnu.tar.gz | tar xz
           sudo mv carton /usr/local/bin/
 
       - name: Build
