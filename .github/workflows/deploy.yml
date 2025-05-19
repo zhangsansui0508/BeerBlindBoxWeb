@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Swift
+        uses: swift-actions/setup-swift@v1
+        with:
+          swift-version: "5.9"
+          
+      - name: Install carton
+        run: |
+          curl -L https://github.com/swiftwasm/carton/releases/download/1.0.0/carton-1.0.0-x86_64-apple-darwin.tar.gz | tar xz
+          sudo mv carton /usr/local/bin/
+          
+      - name: Build
+        run: |
+          carton build --product BeerBlindBoxWeb
+          
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .build/debug/ 
