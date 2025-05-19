@@ -9,7 +9,6 @@ let package = Package(
         .macOS(.v13)
     ],
     dependencies: [
-        .package(url: "https://github.com/swiftwasm/carton", from: "1.0.0"),
         .package(url: "https://github.com/TokamakUI/Tokamak", from: "0.11.0")
     ],
     targets: [
