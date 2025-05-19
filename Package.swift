@@ -6,7 +6,8 @@ import PackageDescription
 let package = Package(
     name: "BeerBlindBoxWeb",
     platforms: [
-        .macOS(.v13)
+        .macOS(.v13),
+        .linux
     ],
     dependencies: [
         .package(url: "https://github.com/TokamakUI/Tokamak", from: "0.11.0")
