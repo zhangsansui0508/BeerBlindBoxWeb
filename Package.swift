@@ -19,6 +19,9 @@ let package = Package(
             name: "BeerBlindBoxWeb",
             dependencies: [
                 .product(name: "TokamakShim", package: "Tokamak")
+            ],
+            resources: [
+                .process("Public")
             ]
         )
     ]

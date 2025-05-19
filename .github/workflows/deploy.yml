@@ -33,6 +33,7 @@ jobs:
         run: |
           carton init
           carton build --product BeerBlindBoxWeb --verbose
+          ls -la .build/debug/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
